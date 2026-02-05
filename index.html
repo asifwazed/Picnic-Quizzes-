@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picnic Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <section id="home-screen" class="screen active">
+            <h1>Picnic Quiz 2026</h1>
+            <p>Class Party & Fun</p>
+            <button id="btn-start-setup" class="btn primary-btn">Start Game</button>
+        </section>
+
+        <section id="setup-screen" class="screen hidden">
+            <h2>Team Setup</h2>
+            <div id="team-inputs">
+                </div>
+            <div class="controls">
+                <button onclick="addTeamInput()" class="btn secondary-btn">+ Add Team</button>
+                <button id="btn-start-quiz" class="btn primary-btn">Ready!</button>
+            </div>
+        </section>
+
+        <section id="game-screen" class="screen hidden">
+            <div class="header-bar">
+                <span id="category-badge">Category</span>
+                <span id="q-number">1/10</span>
+            </div>
+
+            <div class="timer-container">
+                <div id="timer-bar"></div>
+                <span id="timer-text">20</span>
+            </div>
+
+            <div class="question-box">
+                <h3 id="question-text">Question goes here...</h3>
+            </div>
+
+            <div id="options-container" class="options-grid">
+                </div>
+
+            <div class="host-controls">
+                <button id="btn-reveal" class="btn action-btn">Reveal Answer</button>
+                
+                <div id="award-section" class="hidden">
+                    <p>Who answered correctly?</p>
+                    <div id="team-award-buttons"></div>
+                    <button id="btn-no-point" class="btn secondary-btn">No One / Skip</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="scoreboard-screen" class="screen hidden">
+            <h2>Scores</h2>
+            <ul id="score-list"></ul>
+            <button id="btn-next-question" class="btn primary-btn">Next Question</button>
+        </section>
+
+        <section id="result-screen" class="screen hidden">
+            <h1>🏆 Winner 🏆</h1>
+            <div id="winner-display"></div>
+            <button onclick="location.reload()" class="btn secondary-btn">New Game</button>
+        </section>
+
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
